@@ -28,6 +28,7 @@ module uart_rx(
     );
 
     //----------------receive_ack will be set once receive a 8bit data 
+    //串口在接受的时候，receive_ack 信号为低，串口接受模块空闲则为高
 
 
     // 串口接受状态机

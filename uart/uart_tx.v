@@ -25,9 +25,12 @@ module uart_tx(
     output reg txd,
     input wire clk,
     input wire rst,
-    input wire receive_ack,
-    output wire transmit_done
+    input wire tx_trig,
+    output wire tx_done
     );
+
+    // tx_trig : 串口输入触发信号 高电平有效
+    // tx_done : 输入一位数据有效
     localparam  IDLE = 2'b00,
                 SEND_START = 2'b01,
                 SEND_DATA = 2'b10,
@@ -35,7 +38,7 @@ module uart_tx(
     reg [1:0] current_state,next_state;
     reg [4:0] count;
     reg [7:0] data_o_tmp;
-    reg transmit_done_r;
+    reg tx_done_r;
    // 状态机
     always @(posedge clk) begin
         current_state <= next_state;
@@ -45,12 +48,12 @@ module uart_tx(
     always @(*) begin
         next_state = current_state;
         case (current_state)
-          IDLE: if(receive_ack) next_state = SEND_START; 
+          IDLE: if(tx_trig) next_state = SEND_START; 
           SEND_START:   next_state = SEND_DATA;
           SEND_DATA:    if (count == 7) begin
             next_state = SEND_END;
           end
-          SEND_END:  if (receive_ack)   next_state = SEND_START;
+          SEND_END:  if (tx_trig)   next_state = SEND_START;
           default: next_state = IDLE;
         endcase
     end
@@ -84,13 +87,13 @@ module uart_tx(
 
     always @(posedge clk) begin
       if (current_state == SEND_END) begin
-          transmit_done_r <= 1'b1;
+          tx_done_r <= 1'b1;
       end
       else begin
-          transmit_done_r <= 1'b0;
+          tx_done_r <= 1'b0;
       end
     end
 
-    assign transmit_done = transmit_done_r;
+    assign tx_done = tx_done_r;
 
 endmodule
