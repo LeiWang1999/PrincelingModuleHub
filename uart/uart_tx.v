@@ -25,12 +25,11 @@ module uart_tx(
     output reg txd,
     input wire clk,
     input wire rst,
-    input wire tx_trig,
-    output wire tx_done
+    input wire tx_trig
     );
 
     // tx_trig : 串口输入触发信号 高电平有效
-    // tx_done : 输入一位数据有效
+
     localparam  IDLE = 2'b00,
                 SEND_START = 2'b01,
                 SEND_DATA = 2'b10,
@@ -38,7 +37,6 @@ module uart_tx(
     reg [1:0] current_state,next_state;
     reg [4:0] count;
     reg [7:0] data_o_tmp;
-    reg tx_done_r;
    // 状态机
     always @(posedge clk) begin
         current_state <= next_state;
@@ -85,15 +83,5 @@ module uart_tx(
         txd <= 1;
     end
 
-    always @(posedge clk) begin
-      if (current_state == SEND_END) begin
-          tx_done_r <= 1'b1;
-      end
-      else begin
-          tx_done_r <= 1'b0;
-      end
-    end
-
-    assign tx_done = tx_done_r;
 
 endmodule

@@ -6,7 +6,7 @@
 
 ### ModuleIntroduction
 
-**counter_mod_m** 模m计数器
+- **counter_mod_m** 模m计数器
 
 ```verilog
     counter_mod_m #(.M(4), .N(2)) counter_mod_p_tick(
@@ -17,15 +17,44 @@
 // M 为 模数   N 为 Log(2,n)向上取整
 ```
 
-**debounce** 一位的按键消抖，状态机实现
+- **debounce** 一位的按键消抖，状态机实现
 
-**posedge_detect** 上升沿检测
+- **posedge_detect** 上升沿检测
 
-**uart**	8位数据位，1位起始位，1位结束位的串口通信，其中包括，串口接受uart_rx , 串口发送uart_tx
+- **uart**	8位数据位，1位起始位，1位结束位的串口通信，其中包括，串口接受uart_rx , 串口发送uart_tx
 
-**digitaltubedisplay**	十六进制的数码管显示，段位选都是共阳 特别注意使用共阴时得把段选也取反
+  - uart_rx
 
-**VGA** 	基本的 VGA 同步驱动 vga_sync  （理解了我好久） 下面是例化的示范代码
+    ```verilog
+    module uart_rx(
+        input wire clk,
+        input wire rxd,
+        output wire receive_ack,
+        output reg [7:0] data_i
+        );
+        
+        //----------------receive_ack will be set once receive a 8bit data 
+        //串口在接受的时候，receive_ack 信号为低，串口接受模块空闲则为高
+    ```
+
+  - uart_tx
+
+    ```verilog
+    module uart_tx(
+        input wire [7:0] data_o,
+        output reg txd,
+        input wire clk,
+        input wire rst,
+        input wire tx_trig,
+        output wire transmit_done
+        );
+        
+        // tx_trig : 串口输入触发信号 高电平有效
+    ```
+
+- **digitaltubedisplay**	十六进制的数码管显示，段位选都是共阳 特别注意使用共阴时得把段选也取反
+
+- **VGA** 	基本的 VGA 同步驱动 vga_sync  （理解了我好久） 下面是例化的示范代码
 
 ```verilog
     vga_sync u1_vga_sync(
@@ -50,7 +79,7 @@ VGA显示同步
 */
 ```
 
-**binary2bcd**     可扩展（扩展功能并不完善,需要自己手动添加循环）的任意二进制转换成bcd码的电路，默认12位以下可以转换 
+- **binary2bcd**     可扩展（扩展功能并不完善,需要自己手动添加循环）的任意二进制转换成bcd码的电路，默认12位以下可以转换 
 
 ```verilog
 module  binary2bcd #(
