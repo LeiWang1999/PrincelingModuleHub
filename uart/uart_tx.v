@@ -24,7 +24,6 @@ module uart_tx(
     input wire [7:0] data_o,
     output reg txd,
     input wire clk,
-    input wire rst,
     input wire tx_trig
     );
 

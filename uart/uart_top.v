@@ -49,7 +49,6 @@ module uart_top(
     uart_tx uart_tx(
         .clk(clk_9600),
         .txd(txd),
-        .rst(1),
         .data_o(data),
         .receive_ack(receive_ack)
     );
