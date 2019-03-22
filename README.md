@@ -30,10 +30,8 @@
         input wire signal,
         output wire pos_tick,
         output wire neg_tick
-        );
+    );
     ```
-
-    
 
     
 
@@ -115,6 +113,36 @@ module  binary2bcd #(
 	result[11:8] = result[11:8]+4'd3;
 //比如
    if(result[15:12] > 4) result[15:12] = result[15:12] + 4'd3;
- 
 ```
 
+- Sram_ctr	读写Sram的模块
+
+  ```verilog
+  
+   module sram_ctr #(
+      parameter   ADDR_WIDTH  =   19,
+      parameter   DATA_WIDTH  =   16
+  )(
+      // system   signal
+      input       wire        clk,
+      input       wire        rst_n,
+  
+      //  Sram    signal
+      output      wire    [ADDR_WIDTH-1:0]        sram_addr,
+      inout       wire    [DATA_WIDTH-1:0]        sram_data,
+      output      wire                            sram_ce_n,      //  chip_enable
+      output      wire                            sram_lb_n,      //  low_8_byte_enable
+      output      wire                            sram_oe_n,      //  output_enable
+      output      wire                            sram_ub_n,      //  high_8_byte_enable
+      output      wire                            sram_we_n,      //  write_enable
+  
+      // input    signal
+      input       wire                                write_tick,
+      input       wire                                read_tick,
+      input       wire        [DATA_WIDTH-1:0]        data_in,
+      output      wire        [DATA_WIDTH-1:0]        data_out,
+      input       wire        [ADDR_WIDTH-1:0]        addr_in
+      );
+  ```
+
+  
