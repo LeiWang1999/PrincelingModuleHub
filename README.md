@@ -19,7 +19,23 @@
 
 - **debounce** 一位的按键消抖，状态机实现
 
-- **posedge_detect** 上升沿检测
+- **edge_detect** 上升沿检测
+
+  - 双边沿检测电路
+
+    ```verilog
+    module edge_detect(
+        input wire clk,
+        input wire rst_n,
+        input wire signal,
+        output wire pos_tick,
+        output wire neg_tick
+        );
+    ```
+
+    
+
+    
 
 - **uart**	8位数据位，1位起始位，1位结束位的串口通信，其中包括，串口接受uart_rx , 串口发送uart_tx
 

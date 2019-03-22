@@ -20,11 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module posedge_detect(
+module edge_detect(
     input wire clk,
     input wire rst_n,
     input wire signal,
-    output wire tick
+    output wire pos_tick,
+    output wire neg_tick
     );
 
     reg tick_r;
@@ -37,6 +38,7 @@ module posedge_detect(
       tick_r <= signal;
     end
 
-    assign tick = (~tick_r)&signal;
+    assign pos_tick = (~tick_r)&signal;       // 0 -> 1 ↑
+    assign neg_tick = (tick_r)&(~signal);     // 1 -> 0 ↓
 
 endmodule
