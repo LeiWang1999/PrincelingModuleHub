@@ -148,12 +148,6 @@ module  binary2bcd #(
 
 
 
-
-
-
-
-
-
 # IP
 
 @2019年4月19日
