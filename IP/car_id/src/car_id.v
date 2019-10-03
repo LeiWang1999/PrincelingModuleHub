@@ -22,8 +22,8 @@ module car_id(
 //*****************************************
 // skin detection parameter define
 //*****************************************
-parameter Y_LOW   = 8'd35;
-parameter Y_HIGH  = 8'd60;
+parameter Y_LOW   = 8'd00 ;//8'd35;
+parameter Y_HIGH  = 8'd100;
 //parameter CB_LOW  = 8'd160;
 //parameter CB_HIGH = 8'd192;
 //parameter CR_LOW  = 8'd95;
@@ -34,12 +34,12 @@ parameter Y_HIGH  = 8'd60;
 //parameter CR_LOW  = 8'd95;
 //parameter CR_HIGH = 8'd125;
 
-parameter CB_LOW  = 8'd150;
-parameter CB_HIGH = 8'd198;
-parameter CR_LOW  = 8'd60;
-parameter CR_HIGH = 8'd125;
+parameter CB_LOW  = 8'd10;
+parameter CB_HIGH = 8'd200;
+parameter CR_LOW  = 8'd10;
+parameter CR_HIGH = 8'd200;
  
-wire			   [7 : 0]		    y_8b;
+wire			         [7 : 0]		    y_8b;
 wire               [7 : 0]         cb_8b;
 wire               [7 : 0]         cr_8b; 
 
@@ -62,14 +62,14 @@ always @(posedge pix_clk or negedge reset_n) begin
     skin_gray_r   <= 24'h000000;
   end
   else if((cb_8b > CB_LOW && cb_8b < CB_HIGH) && (cr_8b > CR_LOW && cr_8b < CR_HIGH)) begin
-    skin_binary_r <= 24'b000_000;
-    skin_rgb_r    <= i_rgb;
-    skin_gray_r   <= i_gray;
-  end
-  else begin
     skin_binary_r <= 24'hfff_fff;
     skin_rgb_r    <= 24'hFFFFFF;
     skin_gray_r   <= 24'hFFFFFF;
+  end
+  else begin
+    skin_binary_r <= 24'h000_000;
+    skin_rgb_r    <= i_rgb;
+    skin_gray_r   <= i_gray;
   end
 end 
 

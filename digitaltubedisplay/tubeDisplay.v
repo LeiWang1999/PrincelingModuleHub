@@ -55,8 +55,6 @@ module tubeDisplay(
     e       =   7'b000_0110,
     f       =   7'b000_1110,
     nothing =   7'b111_1111;
-
-
     
     always@(posedge clk)
     begin

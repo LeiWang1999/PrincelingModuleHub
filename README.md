@@ -2,7 +2,9 @@
 
 ## Description
 
-​	这里存放的是我写的一些模块
+- 最后一次更新日期：2019年9月24日
+
+- 这里是我写的一些FPGA模块
 
 ### ModuleIntroduction
 
@@ -148,7 +150,7 @@ module  binary2bcd #(
 
 
 
-# IP
+## IP
 
 @2019年4月19日
 
