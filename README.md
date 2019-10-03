@@ -15,6 +15,7 @@
 
 - 整理了一下、把图像处理的IP也增加进来了。
 - 由于关注过https://github.com/Digilent/vivado-library 添加gitignore，取消该文件的上传
+- 决定把ARM的IP也放进来。
 
 ### ModuleIntroduction
 
