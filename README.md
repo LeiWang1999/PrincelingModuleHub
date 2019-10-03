@@ -3,8 +3,18 @@
 ## Description
 
 - 最后一次更新日期：2019年9月24日
-
 - 这里是我写的一些FPGA模块
+
+## IP Log
+
+@2019年4月19日
+
+- 添加了VGA 的 IP
+
+@2019年10月3日
+
+- 整理了一下、把图像处理的IP也增加进来了。
+- 由于关注过https://github.com/Digilent/vivado-library 添加gitignore，取消该文件的上传
 
 ### ModuleIntroduction
 
@@ -148,10 +158,3 @@ module  binary2bcd #(
   ```
 
 
-
-
-## IP
-
-@2019年4月19日
-
-添加了VGA 的 IP
