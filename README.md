@@ -40,9 +40,9 @@
 
   效果如下
 
-  ![](D:\EELab\FPGA\PrincelingModuleHub\Powershell\配置1.jpg)
+  ![](Powershell\配置1.jpg)
 
-  ![](D:\EELab\FPGA\PrincelingModuleHub\Powershell\效果1.jpg)
+  ![](Powershell\效果1.jpg)
 
 ### FPGA-ModuleIntroduction
 
