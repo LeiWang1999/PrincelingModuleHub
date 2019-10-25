@@ -40,9 +40,9 @@
 
   效果如下
 
-  ![1571989568054](C:\Users\Princeling\AppData\Roaming\Typora\typora-user-images\1571989568054.png)
+  ![](D:\EELab\FPGA\PrincelingModuleHub\Powershell\配置1.jpg)
 
-  ![1571989544511](C:\Users\Princeling\AppData\Roaming\Typora\typora-user-images\1571989544511.png)
+  ![](D:\EELab\FPGA\PrincelingModuleHub\Powershell\效果1.jpg)
 
 ### FPGA-ModuleIntroduction
 
