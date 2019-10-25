@@ -38,11 +38,9 @@
 
   powershell窗口配色方案
 
-  效果如下
+  <img src="https://github.com/NjtechPrinceling/PrincelingModuleHub/blob/master/Powershell/配置1.jpg">
 
-  ![](Powershell\配置1.jpg)
-
-  ![](Powershell\效果1.jpg)
+  <img src="https://github.com/NjtechPrinceling/PrincelingModuleHub/blob/master/Powershell/效果1.jpg">
 
 ### FPGA-ModuleIntroduction
 
