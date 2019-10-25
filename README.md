@@ -17,7 +17,34 @@
 - 由于关注过https://github.com/Digilent/vivado-library 添加gitignore，取消该文件的上传
 - 决定把ARM的IP也放进来。
 
-### ModuleIntroduction
+@2019年10月25日
+
+- 把powershell的配置文件添加进来
+- 删除LearnGit仓库
+
+### Powershell-ModuleIntroduction
+
+- code_ps_profile_windows.ps1
+
+  用于在windows下vscode和vivado结合，自动生成testbench脚本
+
+  博文地址:  https://blog.csdn.net/qq_39498701/article/details/84668833 
+
+- code_ps_profile_linux.ps1
+
+  用于在linux下vscode和vivado结合，自动生成testbench脚本
+
+- Microsoft.PowerShell_profile.ps1
+
+  powershell窗口配色方案
+
+  效果如下
+
+  ![1571989568054](C:\Users\Princeling\AppData\Roaming\Typora\typora-user-images\1571989568054.png)
+
+  ![1571989544511](C:\Users\Princeling\AppData\Roaming\Typora\typora-user-images\1571989544511.png)
+
+### FPGA-ModuleIntroduction
 
 - **counter_mod_m** 模m计数器
 
