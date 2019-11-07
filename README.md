@@ -2,8 +2,8 @@
 
 ## Description
 
-- 最后一次更新日期：2019年9月24日
-- 这里是我写的一些FPGA模块
+- 最后一次更新日期：2019年11月7日
+- 这里是我写的一些模块
 
 ## IP Log
 
@@ -21,6 +21,10 @@
 
 - 把powershell的配置文件添加进来
 - 删除LearnGit仓库
+
+@2019年11月7日
+
+- 添加了注册表文件 执行过后可以右击 VsCode 打开 (限windows
 
 ### Powershell-ModuleIntroduction
 
